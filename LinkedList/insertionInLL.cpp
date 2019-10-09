@@ -36,6 +36,20 @@ public:
     n->next=node;
     node->next=NULL;
   }
+  //insert after a given Node
+  void insertafter(int data,int x){
+    Node* node= new Node;
+    Node* n=head;
+    node->data=data;
+    while(n!=NULL){
+      if(n->data==x){
+        break;
+      }
+      n=n->next;
+    }
+    node->next=n->next;
+    n->next=node;
+  }
 };
 
 int main(){
@@ -45,5 +59,6 @@ int main(){
     x.insertBeg(i+1);
   }
   x.insertAtlast(6);
+  x.insertafter(7,3);
   x.show();
 }
