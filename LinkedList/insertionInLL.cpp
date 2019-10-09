@@ -1,4 +1,4 @@
-#include <ostream>
+#include <iostream>
 using namespace std;
 
 struct Node{
@@ -13,16 +13,24 @@ public:
   void insertBeg(int data){
     Node* node= new Node;
     node->data=data;
-    if(head=NULL){
-      head=node;
-      tail=node;
-    }else{
-      node->next=head;
-      head=node;
-    }
+    node->next=head;
+    head=node;
   }
-}
+  //to print all the node in the list
+  void show(){
+    Node *n=head;
+    while(n->next!=NULL){
+      cout<<n->data<<" ";
+      n=n->next;
+    }
+    cout<<n->data<<endl;
+  }
+};
 
 int main(){
-
+  list x;
+  for(int i=0;i<5;i++){
+    x.insertBeg(i+1);
+  }
+  x.show();
 }
