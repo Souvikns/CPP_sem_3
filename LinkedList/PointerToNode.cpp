@@ -28,6 +28,13 @@ public:
     }
     return n->data;
   }
+  int getSecondLast(){
+    Node *n=head;
+    while(n->next->next!=NULL){
+      n=n->link;
+    }
+    return n->data;
+  }
 };
 
 int main(){
@@ -35,5 +42,6 @@ int main(){
   for(int i=0;i<5;i++){
     x.insert(i+1);
   }
-  cout<<x.getLast()<<endl;
+  cout<<"Last Element"<<x.getLast()<<endl;
+  cout<<"Second Last Element"<<x.getSecondLast()<<endl;
 }
