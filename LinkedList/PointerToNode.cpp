@@ -21,6 +21,7 @@ public:
       tail=tail->next;
     }
   }
+  //to get the pointer of the last Node
   int getLast(){
     Node *n=head;
     while(n->next!=NULL){
@@ -28,10 +29,22 @@ public:
     }
     return n->data;
   }
+  //to get the pointer of the second last node
   int getSecondLast(){
     Node *n=head;
     while(n->next->next!=NULL){
-      n=n->link;
+      n=n->next;
+    }
+    return n->data;
+  }
+  //to get the pointer of a particular Node
+  int getParticular(int data){
+    Node *n=head;
+    while(n->next!=NULL){
+      if(n->data==data){
+        break;
+      }
+      n=n->next;
     }
     return n->data;
   }
@@ -42,6 +55,7 @@ int main(){
   for(int i=0;i<5;i++){
     x.insert(i+1);
   }
-  cout<<"Last Element"<<x.getLast()<<endl;
-  cout<<"Second Last Element"<<x.getSecondLast()<<endl;
+  cout<<"Last Element "<<x.getLast()<<endl;
+  cout<<"Second Last Element "<<x.getSecondLast()<<endl;
+  cout<<"particular Element "<<x.getParticular(2)<<endl;
 }
