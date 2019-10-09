@@ -25,12 +25,25 @@ public:
     }
     cout<<n->data<<endl;
   }
+  //insert element at the last of the list
+  void insertAtlast(int data){
+    Node *node=new Node;
+    node->data=data;
+    Node *n=head;
+    while(n->next!=NULL){
+      n=n->next;
+    }
+    n->next=node;
+    node->next=NULL;
+  }
 };
 
 int main(){
   list x;
+
   for(int i=0;i<5;i++){
     x.insertBeg(i+1);
   }
+  x.insertAtlast(6);
   x.show();
 }
