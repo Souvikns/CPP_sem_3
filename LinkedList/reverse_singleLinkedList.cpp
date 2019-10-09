@@ -29,7 +29,19 @@ public:
     }
     cout<<n->data<<endl;
   }
-  
+  //to reverse a single linked List
+  void rev(){
+    Node *prev,*temp,*next;
+    prev=NULL;
+    temp=head;
+    while(temp!=NULL){
+      next=temp->next;
+      temp->next=prev;
+      prev=temp;
+      temp=next;
+    }
+    head=prev;
+  }
 };
 
 int main(){
@@ -37,6 +49,7 @@ int main(){
   for(int i=0;i<5;i++){
     x.insert(i+1);
   }
+  x.rev();
   x.show();
 
 }
