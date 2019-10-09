@@ -48,6 +48,17 @@ public:
     }
     return n->data;
   }
+  //to get the pointer to predessesor of a node with a particular Node
+  int getpred(int data){
+    Node *n=head;
+    while(n->next!=NULL){
+      if(n->next->data==data){
+        break;
+      }
+      n=n->next;
+    }
+    return n->data;
+  }
 };
 
 int main(){
@@ -58,4 +69,5 @@ int main(){
   cout<<"Last Element "<<x.getLast()<<endl;
   cout<<"Second Last Element "<<x.getSecondLast()<<endl;
   cout<<"particular Element "<<x.getParticular(2)<<endl;
+  cout<<"pred of particular Element"<<x.getpred(3)<<endl;
 }
