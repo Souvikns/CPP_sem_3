@@ -59,6 +59,14 @@ public:
     }
     return n->data;
   }
+  //to get a pointer of a particulr position
+  int getPartPos(int k){
+    Node *n= head;
+    for(int i=0;i<k&&n!=NULL;i++){
+      n=n->next;
+    }
+    return n->data;
+  }
 };
 
 int main(){
@@ -70,4 +78,5 @@ int main(){
   cout<<"Second Last Element "<<x.getSecondLast()<<endl;
   cout<<"particular Element "<<x.getParticular(2)<<endl;
   cout<<"pred of particular Element"<<x.getpred(3)<<endl;
+  cout<<"element of a particular position "<<x.getPartPos(0)<<endl;
 }
