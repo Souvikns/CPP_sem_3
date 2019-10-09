@@ -44,6 +44,16 @@ public:
     n->next=temp->next;
     free(temp);
   }
+  //delete the last node of the list
+  void deleteLast(){
+    Node* n=head;
+    while(n->next->next!=NULL){
+      n=n->next;
+    }
+    Node* temp=n->next;
+    n->next=temp->next;
+    free(temp);
+  }
 };
 
 int main(){
@@ -53,5 +63,6 @@ int main(){
   }
   x.deleteFirst();
   x.deleteInBetween(2);
+  x.deleteLast();
   x.show();
 }
