@@ -34,7 +34,16 @@ public:
     head=head->next;
     free(n);
   }
-  
+  //deletion in between nodes
+  void deleteInBetween(int pos){
+    Node* n=head;
+    for(int i=0;i<pos-1&&n!=NULL;i++){
+      n=n->next;
+    }
+    Node* temp=n->next;
+    n->next=temp->next;
+    free(temp);
+  }
 };
 
 int main(){
@@ -43,5 +52,6 @@ int main(){
     x.insert(i+1);
   }
   x.deleteFirst();
+  x.deleteInBetween(2);
   x.show();
 }
