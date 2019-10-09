@@ -64,6 +64,17 @@ public:
     node->next=n->next;
     n->next=node;
   }
+  //insertion of an element at a given position
+  void insertAt(int data,int x){
+    Node* node=new Node;
+    Node* n=head;
+    node->data=data;
+    for(int i=0;i<x-1&&n!=NULL;i++){
+      n=n->next;
+    }
+    node->next=n->next;
+    n->next=node;
+  }
 };
 
 int main(){
@@ -75,5 +86,6 @@ int main(){
   x.insertAtlast(6);
   x.insertafter(7,3);
   x.insertbefore(8,4);
+  x.insertAt(10,3);
   x.show();
 }
