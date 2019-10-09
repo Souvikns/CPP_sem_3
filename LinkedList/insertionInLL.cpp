@@ -50,6 +50,20 @@ public:
     node->next=n->next;
     n->next=node;
   }
+  //insert before a given node
+  void insertbefore(int data,int x){
+    Node* node= new Node;
+    Node* n=head;
+    node->data=data;
+    while(n->next!=NULL){
+      if(n->next->data==x){
+        break;
+      }
+      n=n->next;
+    }
+    node->next=n->next;
+    n->next=node;
+  }
 };
 
 int main(){
@@ -60,5 +74,6 @@ int main(){
   }
   x.insertAtlast(6);
   x.insertafter(7,3);
+  x.insertbefore(8,4);
   x.show();
 }
