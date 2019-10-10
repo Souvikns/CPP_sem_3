@@ -9,7 +9,7 @@ struct Node{
 
 class list{
   Node* head=NULL;
-  Node* tail=NULL;
+  //Node* tail=NULL;
 public:
   void insert(int data){
     Node* node= new Node;
@@ -43,6 +43,17 @@ public:
     head->prev=node;
     head=node;
   }
+  //insert at last
+  void insertAtlast(int data){
+    Node* node = new Node;
+    node->data=data;
+    Node* n= head;
+    while(n->next!=NULL){
+      n=n->next;
+    }
+    n->next=node;
+    node->prev=n;
+  }
 };
 
 int main(){
@@ -51,5 +62,6 @@ int main(){
     x.insert(i+1);
   }
   x.insertAtFront(6);
+  x.insertAtlast(7);
   x.show();
 }
