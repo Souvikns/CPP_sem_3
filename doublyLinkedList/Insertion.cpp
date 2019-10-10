@@ -54,6 +54,19 @@ public:
     n->next=node;
     node->prev=n;
   }
+  //insertion after of a pointer
+  void insertAfter(int data,int x){
+    Node* node= new Node;
+    node->data=data;
+    Node* n=head;
+    for(int i=0;i<x&&n!=NULL;i++){
+      n=n->next;
+    }
+    node->next=n->next;
+    node->prev=n;
+    n->next->prev=node;
+    n->next=node;
+  }
 };
 
 int main(){
@@ -63,5 +76,6 @@ int main(){
   }
   x.insertAtFront(6);
   x.insertAtlast(7);
+  x.insertAfter(12,2);
   x.show();
 }
