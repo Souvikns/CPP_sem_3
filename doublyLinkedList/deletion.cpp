@@ -32,6 +32,11 @@ public:
     }
     cout<<n->data<<endl;
   }
+  //deleting the first element
+  void deleteFirst(){
+    head=head->next;
+    head->prev=NULL;
+  }
 };
 
 int main(){
@@ -40,6 +45,7 @@ int main(){
     x.insert(i+1);
   }
   x.show();
-
+  x.deleteFirst();
+  x.show();
   return 0;
 }
