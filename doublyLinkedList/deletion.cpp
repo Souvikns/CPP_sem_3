@@ -45,6 +45,16 @@ public:
     }
     n->next=NULL;
   }
+  //delete at a position
+  deleteAtpos(int x){
+    Node* n= head;
+    for(int i=0;i<x-1&&n!=NULL;i++){
+      n=n->next;
+    }
+    Node* q=n->next;
+    q->next->prev=n;
+    n->next=q->next;
+  }
 };
 
 int main(){
@@ -54,7 +64,10 @@ int main(){
   }
   x.show();
   x.deleteFirst();
+  x.show();
   x.deleteLast();
+  x.show();
+  x.deleteAtpos(1);
   x.show();
   return 0;
 }
