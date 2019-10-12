@@ -20,7 +20,7 @@ public:
       while(n->next!=NULL){
         n=n->next;
       }
-      node->prev=node;
+      node->prev=n;
       n->next=node;
     }
   }
