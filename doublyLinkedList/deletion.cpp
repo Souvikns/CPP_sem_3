@@ -37,6 +37,14 @@ public:
     head=head->next;
     head->prev=NULL;
   }
+  //deleting the last element
+  void deleteLast(){
+    Node* n= head;
+    while(n->next->next!=NULL){
+      n=n->next;
+    }
+    n->next=NULL;
+  }
 };
 
 int main(){
@@ -46,6 +54,7 @@ int main(){
   }
   x.show();
   x.deleteFirst();
+  x.deleteLast();
   x.show();
   return 0;
 }
