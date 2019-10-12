@@ -32,6 +32,22 @@ public:
     }
     cout<<n->data<<endl;
   }
+  //reverse a doubly linked list 
+  void rev(){
+    Node* p1=head;
+    Node* p2=p1->next;
+    p1=head;
+    p2=p2->next;
+    p1->next=NULL;
+    p1->prev=p2;
+    while(p2!=NULL){
+      p2->prev=p2->next;
+      p2->next=p1;
+      p1=p2;
+      p2=p2->prev;
+    }
+    head=p1;
+  }
 };
 
 int main(){
@@ -39,5 +55,6 @@ int main(){
   for(int i=0;i<5;i++){
     x.insert(i+1);
   }
+  x.rev();
   x.show();
 }
