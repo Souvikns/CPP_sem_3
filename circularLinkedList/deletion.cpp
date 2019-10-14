@@ -22,6 +22,12 @@ public:
   }
   //delete the first node;
   void deleteFirst(){
+    if(last->next==last){
+      Node* x=last;
+      last=NULL;
+      delete(x);
+      return;
+    }
     Node* n= last->next;
     last->next=n->next;
     delete(n);
