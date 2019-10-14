@@ -20,6 +20,12 @@ public:
       last=node;
     }
   }
+  //delete the first node;
+  void deleteFirst(){
+    Node* n= last->next;
+    last->next=n->next;
+    delete(n);
+  }
   void show(){
     Node* n= last->next;
     do {
@@ -35,6 +41,7 @@ int main(){
   for(int i=0;i<5;i++){
     x.insert(i+1);
   }
+  x.deleteFirst();
   x.show();
 
 }
