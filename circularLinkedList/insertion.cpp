@@ -20,12 +20,20 @@ public:
       last=node;
     }
   }
+  //inserton at the last of the list
   void insertAtlast(int data){
     Node* node= new Node;
     node->data=data;
     node->next=last->next;
     last->next=node;
     last=node;
+  }
+  //insertion at the front of the list
+  void insertAtFront(int data){
+    Node* node= new Node;
+    node->data=data;
+    node->next=last->next;
+    last->next=node;
   }
   void show(){
     Node* n=last->next;
@@ -48,5 +56,6 @@ int main(){
     x.insert(i+1);
   }
   x.insertAtlast(6);
+  x.insertAtFront(7);
   x.show();
 }
