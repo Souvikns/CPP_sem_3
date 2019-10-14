@@ -20,7 +20,7 @@ public:
       last=node;
     }
   }
-  //delete the first node;
+  //delete the first node
   void deleteFirst(){
     if(last->next==last){
       Node* x=last;
@@ -30,6 +30,25 @@ public:
     }
     Node* n= last->next;
     last->next=n->next;
+    delete(n);
+  }
+  //delete the last node
+  void deleteLast(){
+
+    if(last->next==last){
+      Node* x=last;
+      last=NULL;
+      delete(x);
+      return;
+    }
+
+    Node* n=last;
+    Node*p =last->next;
+    do {
+      p=p->next;
+    } while(p->next->next!=last->next);
+    p->next=last->next;
+    last=p;
     delete(n);
   }
   void show(){
@@ -48,6 +67,8 @@ int main(){
     x.insert(i+1);
   }
   x.deleteFirst();
+  x.show();
+  x.deleteLast();
   x.show();
 
 }
