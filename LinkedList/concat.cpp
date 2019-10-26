@@ -31,7 +31,7 @@ public:
     cout<<n->data<<endl;
   }
 };
-
+//to concat two given list
 void concat(list a,list b){
   Node* n=a.head;
   while(n->next!=NULL){
