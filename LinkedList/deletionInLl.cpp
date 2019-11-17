@@ -37,7 +37,7 @@ public:
   void deleteFirst(){
     Node* n=head;
     head=head->next;
-    free(n);
+    //free(n);
   }
   //deletion in between nodes
   void deleteInBetween(int pos){
@@ -47,7 +47,7 @@ public:
     }
     Node* temp=n->next;
     n->next=temp->next;
-    free(temp);
+    //free(temp);
   }
   //delete the last node of the list
   void deleteLast(){
@@ -57,7 +57,7 @@ public:
     }
     Node* temp=n->next;
     n->next=temp->next;
-    free(temp);
+    //free(temp);
   }
 };
 
