@@ -1,19 +1,22 @@
 #include <iostream>
-#include "D:\Users\Souvi\Documents\CPP\fianlExam\headerFiles\print.h"
+#include "headerFiles\print.h"
 using namespace std;
 
-
-int main(){
-  int arr[]={5,4,3,2,1};
-
-  for(int i=1;i<5;i++){
+void sort(int arr[],int n){
+  int j;
+  for(int i=1;i<n;i++){
     int temp=arr[i];
-    int j;
-    for( j=i-1;j>0&&temp<arr[j];j--){
+    for(j=i-1;j>=0&&arr[j]>temp;j--){
       arr[j+1]=arr[j];
     }
     arr[j+1]=temp;
   }
+}
+
+int main(){
+  int arr[]={5,4,3,2,1};
+
+  sort(arr,5);
 
   printArray(arr,5);
 
