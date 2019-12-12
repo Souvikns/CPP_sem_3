@@ -15,6 +15,7 @@ public:
     node->data=data;
     node->next=head;
     head=node;
+    
   }
   //to print all the node in the list
   void show(){
